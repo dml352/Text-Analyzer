@@ -1,0 +1,341 @@
+
+<!-- saved from url=(0066)https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CS 164 Homework 9 - Placement Exercise: Text Readability</title>
+<script language="JavaScript" src="./Instruction_files/InfoTools.js"></script>
+<script language="JavaScript" src="./Instruction_files/CourseConfig.js"></script>
+<script language="JavaScript" src="./Instruction_files/DateTime.js"></script>
+<script language="JavaScript" src="./Instruction_files/config.js"></script>
+<script language="JavaScript" src="./Instruction_files/LabTools.js"></script>
+
+</head>
+<body bgcolor="#FFFFFF" onload="document.title=coursenum + &quot; Homework &quot; + asstNumber + &quot; - &quot; + asstName">
+<table width="100%" border="1" cellpadding="6" cellspacing="0" bordercolor="#000000">
+  <tbody><tr>
+    <td>
+      <h2><a name="Top">
+        <script language="JavaScript">
+	document.write(coursenum + " " + coursename 
+	             + ", " + Terms[term] + " " + year + "<BR>Sect: "
+				 + sections + "<BR>Homework " + asstNumber + " - " + asstName)
+  </script>CS 164 Introduction to Computer Science, Fall 2014<br>Sect: 60..64,65H,66..68<br>Homework 9 - Placement Exercise: Text Readability
+        </a></h2>
+      <p><font size="-3"><i>by P Zoski, JL Popyack</i></font></p>
+      <p>
+        <script language="JavaScript">
+	document.writeln("<TABLE BORDER=0>\n<TR>\n  <TD>")	
+	document.writeln("<B>Due Date:</B><\TD>\n  <TD>" + dayDateAndTime(dueDate) + "<\TD>\n<\TR>")
+	document.writeln("<TR>\n  <TD>")	
+	document.writeln("<B>Late Due Date:</B><\TD>\n  <TD>")
+	if( lateDueDate == "" ) 
+		document.writeln( "<B><I>NONE!</I></B>")
+	else
+		document.writeln( dayDateAndTime(lateDueDate) )
+	document.writeln("<\TD>\n<\TR></TABLE>")	
+</script><table border="0">
+<tbody><tr>
+  <td>
+<b>Due Date:</b></td><td>
+  </td><td>Thursday, November 13, 2014, 11:55 PM</td><td>
+</td></tr><tr>
+</tr><tr>
+  <td>
+<b>Late Due Date:</b></td><td>
+  </td><td>
+Thursday, November 13, 2014, 11:55 PM
+</td><td>
+</td></tr><tr></tr></tbody></table>
+
+      </p>
+    </td>
+  </tr>
+</tbody></table>
+<h4>PURPOSE:</h4>
+<p> The purpose of this exercise is to demonstrate proficiency in programming
+  equivalent to that gained in CS 171 (Computer Programming I) at Drexel University.
+  The topics covered are:</p>
+<ul>
+  <li>Design and implemetation of a computer program</li>
+  <li>Documentation (internally with comments and externally through user guide,
+    systerm guide, and test log)</li>
+  <li>Essential control structures: conditionals, loops,
+    file input/output, subprograms (functions and procedures, argument passing)</li>
+  <li>Other programming components: libraries, object use (through strings),
+    vectors.</li>
+</ul>
+<p>Students demonstrating suitable proficiency and ability to perform at an accelerated
+  pace will be invited to enroll in an "accelerated CS 171/2 transition
+  course"
+  which will cover in 10 weeks the material traditionally covered in CS 171/2
+  at Drexel University.</p>
+<hr>
+<h4>THE ASSIGNMENT:</h4>
+<p>This assignment consists of:</p>
+<ol>
+  <!--  <li><a href ="#SugProbs">Suggested problems</a> (not to be turned in).</li>
+  <li><a href ="#Written">Written problems</a> to be turned in.</li>
+-->
+  <li><a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/index.html#Prog">A programming assignment </a> to be completed, including
+    testing and documentation.<br>
+    You are free to write the program in  C++,  C#, Java, Python or Visual
+    Basic. If you are not familiar with any of these languages/environments,
+    you may write the program in another language with approval from the instructor.</li>
+  <!--  <li><a href ="#Extra">Extra credit</a> for the programming assignment.</li>
+-->
+</ol>
+<table border="0" cellpadding="0" width="95%">
+  <tbody><tr>
+    <td align="left"><font size="-2"> Click <a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/index.html#Top">here</a> to return to
+        top of this page.. </font> </td>
+  </tr>
+  <tr> </tr>
+</tbody></table>
+<p><b>Background:</b></p>
+<ol type="I">
+<li>In his 1948 article "A New Readability Yardstick" in the <i>Journal of Applied Psychology</i>, Rudolf Flesch proposed a 
+  readability index to determine how difficult a piece of text is to read. The text is 
+  analyzed to generate an index (usually) between 0 and 100. The lower the number, 
+  the harder the text is to read. Here are some Flesch readability indices for 
+  various publications:<p></p>
+<blockquote>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <tbody><tr> 
+      <td>Comics</td>
+      <td>95</td>
+  </tr>
+  <tr> 
+      <td>Consumer Ads</td>
+      <td>82</td>
+  </tr>
+  <tr> 
+      <td>Sports Illustrated</td>
+      <td>65</td>
+  </tr>
+  <tr> 
+      <td>Time</td>
+      <td>57</td>
+  </tr>
+  <tr> 
+      <td>New York Times</td>
+      <td>39</td>
+  </tr>
+  <tr> 
+      <td>Auto Insurance Policy</td>
+      <td>10</td>
+  </tr>
+  <tr> 
+      <td>Internal Revenue Code</td>
+      <td>-6</td>
+  </tr>
+</tbody></table></blockquote>
+The Flesch Reading Ease Score (FRES) is computed using the following formula.<p></p>
+<blockquote>
+  <p>FRES = 206.835 - 84.6 * (Number of Syllables) / (Number of Words) - 1.015 
+    * (Number of Words) / (Number of Sentences)</p>
+</blockquote>
+<p>The index can also be converted to educational levels using the following chart:</p>
+<blockquote>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <tbody><tr>
+      <td>91-100</td>
+      <td>Fifth Grade Level</td>
+    </tr>
+    <tr>
+      <td>81-90</td>
+      <td>Sixth Grade Level</td>
+    </tr>
+    <tr>
+      <td>71-80</td>
+      <td>Seventh Grade Level</td>
+    </tr>
+    <tr>
+      <td>66-70</td>
+      <td>Eighth Grade Level</td>
+    </tr>
+    <tr>
+      <td>61-65</td>
+      <td>Ninth Grade Level</td>
+    </tr>
+    <tr>
+      <td>51-60</td>
+      <td><p>High School Student</p></td>
+    </tr>
+    <tr>
+      <td>31-50</td>
+      <td>College Student</td>
+    </tr>
+    <tr>
+      <td>0-30</td>
+      <td>College Graduate</td>
+    </tr>
+    <tr>
+      <td>Less than 0</td>
+      <td>Law School Graduate</td>
+    </tr>
+  </tbody></table>
+</blockquote>
+</li><li>
+The Flesch-Kincaid Grade Level Formula provides a direct calculation to determine grade level. The Flesch-Kincaid Reading Age (FKRA) is given by<p></p>
+<blockquote>
+  <p>FKRA = 11.8* (Number of Syllables) / (Number of Words) + 0.39
+    * (Number of Words) / (Number of Sentences) - 15.59</p>
+</blockquote>
+<p>The result is a number which corresponds roughly to a student's grade level, e.g., a score of 11.3 would be appropriate for an 11th grade student, and scores of 13 or higher correspond to students in higher education levels.</p>
+</li><li>
+In 1969, G Harry McLaughlin created the SMOG (Simple Measure Of Gobbledygook) Readability Formula, which similarly assesses text readability. As the process was meant to be done by humans, some of the details require decision-making that is not easily done with a program. For our purposes, we will use a simplified SMOG algorithm:<p></p>
+<ul>
+  <li>define a <i>polySyllable word</i> as a word with 3 or more syllables.</li>
+  <li>determine the <i>density</i> of polySyllable words in the text by dividing the number of polySyllable words by the number of sentences.</li>
+  <li>multiply the density by 30, to produce an <i>indicator</i></li>
+  <li>determine the square root of the number that is the closest perfect square to the indicator. That number may be lower or higher than the indicator. For instance, 19 is closer to 16 than to 25, so if the indicator is 19, the result would be 4, but if the indicator is 21, the result would be 5.</li>
+  <li>add 3 to the result to produce the SMOG grade level estimate.</li>
+</ul>
+</li>
+</ol>
+<p><b>DETAILS:</b></p>
+<p>You are to write a program that prompts the user for the name of a text file 
+  (with a .txt extension). The program checks to see if the file name is valid; 
+  that is, the file is in the same directory as the program. If the name is not 
+  valid it prompts the user for another filename (or QUIT to exit the program). 
+  If the program is given a valid file name, it scans the file one word at a time 
+  to compute the number of words, number of syllables,  number of sentences, and number of polysyllables
+  in the file. The program will then compute the Flesch Readability Index, Flesch-Kincaid Grade Level Formula and SMOG Readabilty Formula for 
+  that text file and print a message on the screen indicating what education level 
+  is needed to read the file. It should also produce a single output file containing one line of statistics for each file it reads, separated by tabs. Here is a sample run:</p>
+<blockquote>
+  <pre><b>Please enter a file name (or QUIT to exit):
+Stuff.text
+
+I'm sorry, the file "Stuff.text" has an invalid file extension.
+Please enter a file name (or QUIT to exit):
+Stuff.txt
+
+I'm sorry, the file "Stuff.txt" cannot be found.
+The file must be in the same directory as this program.
+Please enter a file name (or QUIT to exit):
+stuff.txt
+
+File Found...
+Analyzing...
+
+The file "Stuff.txt" has Flesch Reading Ease Score index of 68.
+It requires an eighth grade education to read.
+Its Flesch-Kincaid Grade Level Formula value is 7.83, indicating
+it is at a seventh grade level.
+Its SMOG Readabilty Formula indicator is 21.47, indicating it is
+at an eighth grade level.
+
+Please enter a file name (or QUIT to exit):
+QUIT
+
+Program exiting.
+Press any key to continue.</b></pre></blockquote>
+<p>Test your program on each of the following sample input files:</p>
+<ul>
+  <li>Excerpt from<i> </i><a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/Poopypants.txt"><i>Captain Underpants and the 
+    Perilous Plot of Professor Poopypants</i></a>, by Dav Pilkey.</li>
+  <li>Excerpt from <i><a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/Semiotics.txt">A Theory of Semiotics</a></i>, by 
+    Umberto Eco</li>
+  <li><a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/GreenEggsAndHam.txt"><i>Green Eggs and Ham</i></a>, 
+    by Dr. Seuss.</li>
+  <li>Excerpt from the <a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/Readme.txt"><i>Throne of Baal ReadMe File</i></a>, 
+    from the Baldur's Gate 2 game.</li>
+</ul>
+The output file should have one line  containing your calculations for each of the four  files, in the form shown below,  where " ¬ " stands for the tab character:
+<p>
+  </p><pre>	filename ¬ number of sentences ¬ number of words ¬ number of syllables  ¬ number of polySyllable words ¬ FRES score ¬ FKRS score ¬ SMOG score</pre>
+<p></p> 
+<p><b>Notes:
+</b></p><ul>
+  <li>When counting words in the file, a "word" is is a sequence of letters, minus punctuation, determined by white space or the end of a line, 
+    regardless of whether or not it is an <i>actual English Word</i>. For instance, consider the sentence
+<blockquote>"The Market-Frankford Line's the fastest way," she said.</blockquote>
+  This sentence contains 8 words, which are <i>The</i>, <i>MarketFrankford</i>, <i>Lines</i>, <i>the</i>, <i>fastest</i>, <i>way</i>, <i>she</i>, <i>said</i> - notice that two of the words have internal punctuation marks, and so those should not be construed as <i>word endings</i>.</li>
+  <li>
+  To estimate the number of syllables in each word, use the number of "independent vowels" as a guide. Any group of adjacent 
+    vowels (a, e, i, o, u, y) will count as one "independent vowel". For example the <i>ea</i> in <i>real</i> counts 
+    as one syllable. An <i>e</i> at the end of a word does not count as a syllable. A 
+    word with no vowels still counts as having one syllable.
+  </li>
+  <li>Each period, colon, semicolon, colon, question mark, or exclamation point 
+    indicates the end of a sentence.</li>
+  <li>
+    <i>Note</i>: these estimates will not be perfect. For example, "Mrs. Peterson bought leopard-skin leotards." is one sentence, but would probably be counted as two sentences. Also,"leopard" has two syllables  while "leotard" has three syllables, but both would be estimated as two syllables with these rules.  
+  </li>
+</ul>
+<p>Your program should make appropriate use of strings, functions and vectors. </p>
+    <p>Your program must also use good style, including
+      proper variable names, use of indentation and whitespace, and commenting.
+      Students are advised to follow
+      <script language="JavaScript" type="text/javascript">
+	<!-- Hide from undeducated browsers'
+	var pos = mostRecentCS171.indexOf("index.html");
+ShowURLinTarget("style guidelines",mostRecentCS171.substr(0,pos) + "Horstmann/ccc3_styleguide.html","_style");
+// End hiding -->
+      </script><a href="http://www.cs.drexel.edu/~mcs171/Wi14/Horstmann/ccc3_styleguide.html" target="_style">style guidelines</a> (<tt><font color=""><font size="-1">http://www.cs.drexel.edu/~mcs171/Wi14/Horstmann/ccc3_styleguide.html</font></font></tt>)
+      based
+      on the Horstmann text, containing instructors' editorial remarks.
+      Note that you must supply appropriate 
+      documentation.  See
+      <script language="JavaScript" type="text/javascript">
+	<!-- Hide from undeducated browsers
+ShowURLinTarget("CS 171 course notes on documentation",mostRecentCS171.substr(0,pos) + "notes/01.5_documentation/titleslide.html?CurrentSlide=0","_doc")
+// End hiding -->
+      </script><a href="http://www.cs.drexel.edu/~mcs171/Wi14/notes/01.5_documentation/titleslide.html?CurrentSlide=0" target="_doc">CS 171 course notes on documentation</a> (<tt><font color=""><font size="-1">http://www.cs.drexel.edu/~mcs171/Wi14/notes/01.5_documentation/titleslide.html?CurrentSlide=0</font></font></tt>)
+      .</p>
+  <p><font align="right" size="-2"><a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/index.html#Top">Back to Top</a></font></p>
+
+<hr>
+<h4>WHAT TO SUBMIT:</h4>
+<p>All homework for this course must be submitted electronically using Bb Learn. <i><b>Do
+  not e-mail your assignment to a TA or Instructor!</b></i> If you are having
+  difficulty with your Bb Learn account, <b><i>you</i></b> are responsible for
+  resolving these problems with a TA, an Instructor, or someone from IRT,
+  before the assignment it due. It is suggested you complete your work early
+  so that a TA can help you if you have difficulty with this process.For
+  this assignment, you must submit:</p>
+<ul>
+  <li>Source code for your program. </li>
+  <li>Information on how to compile and run your program. </li>
+  <li>A MS Word document with your the written documentation for your program,
+    including a user manual, system manual, and test log. </li>
+  <li>Output file(s) generated by your program.</li>
+  <li>Executable files (please specify target operating system, e.g., Windows,
+    Mac, Unix)</li>
+  <!--  <li>A MS Word document containing answers to your written problems. </li>
+-->
+</ul>
+<!--<p>In addition to your electronic work, you must also submit a <a HREF="gradesheet.html" TARGET="_gs">gradesheet</a>.
+  Simply follow the link, fill out the form, and click Generate Grade Sheet. <b>Save
+  your grade sheet as type &quot;Web Page, HTML Only&quot;</b>.and submit it
+  to WebCT when you submit your assignment. <i><b>The gradesheet counts as part
+  of your assignment - you will lose points if it is not submitted</b></i>. </p>
+-->
+<p><b><i>Strongly recommended.</i></b> We strongly recommend using a compression
+  utility so that you can compress your files into a single
+  file (with a <tt><b>.zip</b></tt> extension) and just upload it, rather than
+  go through the tedious and error-prone process of uploading each file separately.</p>
+<table border="0" cellpadding="0" width="95%">
+  <tbody><tr>
+    <td align="left"><font size="-2"> Click <a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/index.html#Top">here</a> to return to
+      top of this page. </font></td>
+  </tr>
+  <tr> </tr>
+</tbody></table>
+<hr>
+<h4>ACADEMIC HONESTY:</h4>
+<p>You must compose all written material yourself, including answers to book
+  questions. All material taken from outside sources must be appropriately cited.
+  If you need assistance with this aspect of the assignment, see a consultant
+  during consulting hours.</p>
+<table border="0" cellpadding="0" width="95%">
+  <tbody><tr>
+    <td align="left"><font size="-2"> Click <a href="https://www.cs.drexel.edu/~introcs/Fa14/placement/CS171/index.html#Top">here</a> to return to
+      top of this page. </font></td>
+  </tr>
+  <tr> </tr>
+</tbody></table>
+<p>&nbsp;</p>
+
+
+</body></html>
