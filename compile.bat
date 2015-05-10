@@ -1,0 +1,2 @@
+javac TextReadability.java
+pause
